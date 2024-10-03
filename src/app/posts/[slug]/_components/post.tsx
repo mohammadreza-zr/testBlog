@@ -22,15 +22,15 @@ const Post = ({ slug }: { slug: string }) => {
         </Link>
       </h2>
       <article className="mb-32">
-        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-center">
+        <h1 className="max-w-3xl mx-auto text-xl md:text-2xl lg:text-3xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-center">
           {data.data?.title.rendered}
         </h1>
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-3xl mx-auto mb-4">
           <div className="mb-6">
             <Image
               src={data.data?.featuredMedia.sourceUrl || ""}
               className={
-                "shadow-sm w-full hover:shadow-lg transition-shadow duration-200"
+                "shadow-sm w-full rounded-md hover:shadow-lg transition-shadow duration-200"
               }
               height={data.data?.featuredMedia.height}
               width={data.data?.featuredMedia.width}
@@ -38,21 +38,24 @@ const Post = ({ slug }: { slug: string }) => {
               loading="lazy"
             />
           </div>
-          <div className="mb-6 text-lg">
-            <time dateTime={dateConverter.toDate(data.data?.date)}>
-              {dateConverter.toDate(data.data?.date)}
-            </time>
+          <div>
+            دسته بندی: <strong>{data.data?.categories.name}</strong>
           </div>
         </div>
-        <div className="max-w-2xl mx-auto">
-          {
-            <div
-              className={""}
-              dangerouslySetInnerHTML={{
-                __html: data.data?.content.rendered || "<div></div>",
-              }}
-            />
-          }
+        <div className="max-w-3xl mx-auto space-y-4">
+          <div
+            dangerouslySetInnerHTML={{
+              __html: data.data?.content.rendered || "<div></div>",
+            }}
+          />
+          <div className="mb-6 text-sm flex items-center justify-between gap-4 pt-4">
+            <time dateTime={data.data?.date}>
+              تاریخ انتشار: {dateConverter.toDate(data.data?.date)}
+            </time>
+            <time dateTime={data.data?.modified}>
+              آخرین ویرایش: {dateConverter.toDate(data.data?.modified)}
+            </time>
+          </div>
         </div>
       </article>
     </div>
