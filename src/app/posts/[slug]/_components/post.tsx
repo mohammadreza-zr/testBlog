@@ -15,17 +15,22 @@ const Post = ({ slug }: { slug: string }) => {
   }
 
   return (
-    <div className="container mx-auto px-5">
-      <h2 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mb-20 mt-8 flex items-center">
-        <Link href="/" className="hover:underline">
-          بلاگ
-        </Link>
-      </h2>
+    <div className="max-lg:px-5 py-8 px-4 mx-auto max-w-screen-lg lg:py-16 lg:px-6">
+      <div className="mx-auto max-w-screen-sm text-center lg:mb-16 my-8">
+        <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+          <Link href={"/"} className="hover:underline">
+            بلاگ
+          </Link>
+        </h2>
+        <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+          صفحه جزییات پست
+        </p>
+      </div>
       <article className="mb-32">
-        <h1 className="max-w-3xl mx-auto text-xl md:text-2xl lg:text-3xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-center">
+        <h1 className="mx-auto text-xl md:text-2xl lg:text-3xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-center">
           {data.data?.title.rendered}
         </h1>
-        <div className="max-w-3xl mx-auto mb-4">
+        <div className="mx-auto mb-4">
           <div className="mb-6">
             <Image
               src={data.data?.featuredMedia.sourceUrl || ""}
@@ -35,14 +40,17 @@ const Post = ({ slug }: { slug: string }) => {
               height={data.data?.featuredMedia.height}
               width={data.data?.featuredMedia.width}
               alt={data.data?.featuredMedia.title || ""}
-              loading="lazy"
+              placeholder="blur"
+              blurDataURL={
+                "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAYAAAB/qH1jAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAJ0lEQVR4nGPY2fXjv458/H9Bbtf/IDbD/7v//8/Mvfq/J+nEfxAbAF3NFsFiuaE1AAAAAElFTkSuQmCC"
+              }
             />
           </div>
           <div>
             دسته بندی: <strong>{data.data?.categories.name}</strong>
           </div>
         </div>
-        <div className="max-w-3xl mx-auto space-y-4">
+        <div className="mx-auto space-y-4">
           <div
             dangerouslySetInnerHTML={{
               __html: data.data?.content.rendered || "<div></div>",
