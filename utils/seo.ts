@@ -1,0 +1,114 @@
+import { Metadata, Viewport } from "next";
+
+export const metaData: Metadata = {
+  title: "blog",
+  description: "blog",
+  icons: [
+    {
+      rel: "apple-touch-icon",
+      sizes: "57x57",
+      url: "/apple-touch-icon-57x57.png",
+    },
+    {
+      rel: "apple-touch-icon",
+      sizes: "60x60",
+      url: "/apple-touch-icon-60x60.png",
+    },
+    {
+      rel: "apple-touch-icon",
+      sizes: "72x72",
+      url: "/apple-touch-icon.png",
+    },
+    {
+      rel: "apple-touch-icon",
+      sizes: "76x76",
+      url: "/apple-touch-icon-76x76.png",
+    },
+    {
+      rel: "apple-touch-icon",
+      sizes: "114x114",
+      url: "/apple-touch-icon-114x114.png",
+    },
+    {
+      rel: "apple-touch-icon",
+      sizes: "120x120",
+      url: "/apple-touch-icon-120x120.png",
+    },
+    {
+      rel: "apple-touch-icon",
+      sizes: "152x152",
+      url: "/apple-touch-icon-152x152.png",
+    },
+    {
+      rel: "apple-touch-icon",
+      sizes: "180x180",
+      url: "/apple-touch-icon-180x180.png",
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "32x32",
+      url: "/favicon-32x32.png",
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "194x194",
+      url: "/favicon-194x194.png",
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "192x192",
+      url: "/android-chrome-192x192.png",
+    },
+    {
+      rel: "icon",
+      type: "image/ico",
+      url: "/favicon.ico",
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "16x16",
+      url: "/favicon-16x16.png",
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "32x32",
+      url: "/favicon-32x32.png",
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "192x192",
+      url: "/android-chrome-192x192.png",
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "194x194",
+      url: "/favicon-194x194.png",
+    },
+    {
+      rel: "mask-icon",
+      color: "#7c3aed",
+      url: "/safari-pinned-tab.svg",
+    },
+  ],
+  authors: {
+    name: "Mohammadreza Zare",
+    url: "https://github.com/mohammadreza-zr",
+  },
+  manifest: "/manifest.json",
+  other: {
+    "apple-mobile-web-app-title": "blog",
+    "application-name": "blog",
+    "msapplication-config": "browserconfig.xml",
+  },
+};
+
+export const viewPort: Viewport = {
+  themeColor: "#f9f9f9",
+};
