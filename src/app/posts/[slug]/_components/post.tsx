@@ -35,7 +35,7 @@ const Post = ({ slug }: { slug: string }) => {
             <Image
               src={data.data?.featuredMedia.sourceUrl || ""}
               className={
-                "shadow-sm w-full rounded-md hover:shadow-lg transition-shadow duration-200"
+                "shadow-sm w-full rounded-md hover:shadow-lg transition-shadow duration-200 aspect-video"
               }
               height={data.data?.featuredMedia.height}
               width={data.data?.featuredMedia.width}
